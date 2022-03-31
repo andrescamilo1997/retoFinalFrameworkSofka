@@ -1,0 +1,11 @@
+2022-mar-31 14:30:34 [Business] FAILED : stale element reference: element is not attached to the page document
+  (Session info: chrome=100.0.4896.60)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-E1O7EPG', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.60, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\Usuario\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:63124}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a32de7efcb4565559fd17b11dd55ff9
+2022-mar-31 14:30:40 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 14:30:45 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 14:30:50 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND

@@ -1,0 +1,55 @@
+2022-mar-31 12:36:35 [Test] COMPLETED : Action 'startWebApp' executed successfully with parameters :
+'Feature : 'NOT_FOUND' , Url : 'http://automationpractice.com/index.php''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-0.png
+2022-mar-31 12:36:38 [Test] COMPLETED : Action 'click' executed successfully with parameters :
+'Web Element located by : 'No information' , Timeout : '2''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-1.png
+2022-mar-31 12:36:39 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : 'pilar.pabón@sofmail.com' , Timeout : '2''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-2.png
+2022-mar-31 12:36:40 [Test] COMPLETED : Action 'click' executed successfully with parameters :
+'Web Element located by : 'No information' , Timeout : '2''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-3.png
+2022-mar-31 12:36:42 [Test] COMPLETED : Action 'click' executed successfully with parameters :
+'Web Element located by : 'id: uniform-id_gender1' , Timeout : '10''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-4.png
+2022-mar-31 12:36:43 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : 'María Cristina' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-5.png
+2022-mar-31 12:36:44 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : 'Verdugo' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-6.png
+2022-mar-31 12:36:44 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : '68435582' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-7.png
+2022-mar-31 12:36:45 [Test] COMPLETED : Action 'selectByPartialText' executed successfully with parameters :
+'Web Element located by : 'No information' , Option Partial Text : '7' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-8.png
+2022-mar-31 12:36:45 [Test] COMPLETED : Action 'selectByValue' executed successfully with parameters :
+'Web Element located by : 'No information' , Option Value : '8' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-9.png
+2022-mar-31 12:36:46 [Test] COMPLETED : Action 'selectByPartialText' executed successfully with parameters :
+'Web Element located by : 'No information' , Option Partial Text : '1999' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-10.png
+2022-mar-31 12:36:47 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : 'Esc. 696 Parcela Soledad 4, Castellón de la Plana, Cat 34864' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-11.png
+2022-mar-31 12:36:47 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : 'Pontevedra' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-12.png
+2022-mar-31 12:36:48 [Test] COMPLETED : Action 'selectByText' executed successfully with parameters :
+'Web Element located by : 'No information' , Option Text : 'Florida' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-13.png
+2022-mar-31 12:36:48 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : '08503' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-14.png
+2022-mar-31 12:36:49 [Test] COMPLETED : Action 'sendText' executed successfully with parameters :
+'Web Element located by : 'No information' , Text : '3182390653' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-15.png
+2022-mar-31 12:36:53 [Test] COMPLETED : Action 'click' executed successfully with parameters :
+'Web Element located by : 'No information' , Timeout : '5''.
+		Evidence saved at: C:\Users\Usuario\Desktop\sofka\ProyectosAutomatizacion\retoFinalFrameworkSofka\src\main\resources\evidence\NOT_FOUND_2022-03-31T12-36\NOT_FOUND\NOT_FOUND . Image name: NOT_FOUND-16.png
+2022-mar-31 12:36:59 [Test] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 12:37:04 [Test] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 12:37:09 [Test] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 12:37:14 [Test] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND

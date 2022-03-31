@@ -1,0 +1,6 @@
+2022-mar-31 14:36:57 [Business] FAILED : Action 'moveTo' execution failed with parameters :
+'Web Element located by : 'No information' , Timeout : '10''.
+2022-mar-31 14:37:03 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 14:37:08 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 14:37:13 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
+2022-mar-31 14:37:18 [Business] INFO  : ***** HA FINALIZADO LA PRUEBA******NOT_FOUND-NOT_FOUND
