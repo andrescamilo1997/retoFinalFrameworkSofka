@@ -1,4 +1,4 @@
-package com.automationpractice.test.page;
+package com.automationpractice.test.page.selectandshop;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

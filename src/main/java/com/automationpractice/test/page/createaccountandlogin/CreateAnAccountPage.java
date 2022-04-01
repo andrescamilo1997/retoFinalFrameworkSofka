@@ -1,4 +1,4 @@
-package com.automationpractice.test.page;
+package com.automationpractice.test.page.createaccountandlogin;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,11 +6,11 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CompraPage {
+public class CreateAnAccountPage {
 
     @CacheLookup
-    @FindBy(xpath = "//*[@id=\"order_step\"]/li[1]/span")
-    WebElement msgAllOkInSelection;
+    @FindBy(id = "email_create")
+    WebElement emailAddress;
 
     @CacheLookup
     @FindBy(id = "SubmitCreate")
@@ -108,8 +108,8 @@ public class CompraPage {
     @FindBy(id = "submitAccount")
     WebElement register;
 
-    public WebElement getMsgAllOkInSelection() {
-        return msgAllOkInSelection;
+    public WebElement getEmailAddress() {
+        return emailAddress;
     }
 
     public WebElement getCreateAnAccount() {
@@ -208,7 +208,7 @@ public class CompraPage {
         return register;
     }
 
-    public CompraPage(WebDriver webDriver) {
+    public CreateAnAccountPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 

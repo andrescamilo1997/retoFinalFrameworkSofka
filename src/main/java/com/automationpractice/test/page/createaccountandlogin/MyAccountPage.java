@@ -1,4 +1,4 @@
-package com.automationpractice.test.page;
+package com.automationpractice.test.page.createaccountandlogin;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,17 +6,16 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage {
-
+public class MyAccountPage {
     @CacheLookup
-    @FindBy(css = ".login")
-    WebElement signIn;
+    @FindBy(className = "account")
+    WebElement customerName;
 
-    public WebElement getSignIn() {
-        return signIn;
+    public WebElement getCustomerName() {
+        return customerName;
     }
 
-    public LandingPage(WebDriver webDriver) {
+    public MyAccountPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 }

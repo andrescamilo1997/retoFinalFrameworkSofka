@@ -1,7 +1,7 @@
-package com.automationpractice.test.controllers;
+package com.automationpractice.test.controllers.createaccountandopen;
 
 import com.automationpractice.test.model.Customer;
-import com.automationpractice.test.page.CreateAnAccountPage;
+import com.automationpractice.test.page.createaccountandlogin.CreateAnAccountPage;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;

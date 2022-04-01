@@ -1,8 +1,8 @@
 package com.automationpractice.test.stepdefinition;
 
-import com.automationpractice.test.controllers.CreateAnAccountWebController;
-import com.automationpractice.test.controllers.LoginPageController;
-import com.automationpractice.test.controllers.MyAccountWebController;
+import com.automationpractice.test.controllers.createaccountandopen.CreateAnAccountWebController;
+import com.automationpractice.test.controllers.createaccountandopen.LoginPageController;
+import com.automationpractice.test.controllers.createaccountandopen.MyAccountWebController;
 import com.automationpractice.test.controllers.openwebpage.StartBrowserWebController;
 import com.automationpractice.test.data.objects.TestInfo;
 import com.automationpractice.test.model.Customer;

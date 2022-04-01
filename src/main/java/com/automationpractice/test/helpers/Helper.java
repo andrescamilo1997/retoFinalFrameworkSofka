@@ -69,6 +69,12 @@ public class Helper {
                                 )
                         )
         );
+
+
+        customer.setHeading(String.valueOf(faker.number().numberBetween(1, 2)));
+        customer.setOrderReference("416611");
+        customer.setProduct("2");
+        customer.setMessage(MSG_TO_SEND);
         customer.setState(STATE_BY_DEFAULT_FLORIDA);
         customer.setSize(SIZE_S);
         customer.setSize(SIZE_L);

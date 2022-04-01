@@ -1,28 +1,29 @@
-package com.automationpractice.test.controllers;
+package com.automationpractice.test.controllers.selectandshop;
 
-import com.automationpractice.test.page.MyAccountPage;
+
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
+import com.automationpractice.test.page.selectandshop.CompraPage;
 
-public class MyAccountWebController {
+public class AlertShopController {
     private WebAction webAction;
 
     public void setWebAction(WebAction webAction) {
         this.webAction = webAction;
     }
 
-    public String obtenerNombreDeNuevoUsuario(){
-        String usuario = "";
+    public String obternerMensajeDeConfirmacion(){
+        String mensaje = "";
         try{
-            MyAccountPage myAccountPage = new MyAccountPage(webAction.getDriver());
+            CompraPage compraPage = new CompraPage(webAction.getDriver());
 
-            usuario = webAction.getText(myAccountPage.getCustomerName(), 2, true);
+            mensaje = webAction.getText(compraPage.getMsgAllOkInPay(), 10, true);
 
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
         }
 
-        return usuario;
+        return mensaje;
     }
 }

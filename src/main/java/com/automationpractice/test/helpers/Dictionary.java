@@ -27,5 +27,11 @@ public class Dictionary {
     public static final String SIZE_S = "1";
     public static final String SIZE_M = "2";
     public static final String SIZE_L = "3";
+
     public static final String MSG_ALL_OK_INSELECTION  ="01. Summary";
+    public static final String MSG_ALL_OK_INSSHOP  ="Your order on My Store is complete.";
+
+    public static final String MSG_TO_SEND = "Mil gracias por la atencion prestada";
+    public static final String MSG_ALL_OKMSG_CONTACT_US = "Your message has been successfully sent to our team.";
+    public static final String MSG_ALL_NOT_OK_MSG_CONTACT_US = "There is 1 error\n" + "Invalid email address.";
 }

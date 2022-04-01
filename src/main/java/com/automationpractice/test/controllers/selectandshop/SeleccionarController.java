@@ -1,12 +1,12 @@
-package com.automationpractice.test.controllers;
+package com.automationpractice.test.controllers.selectandshop;
 
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import com.automationpractice.test.model.Customer;
-import com.automationpractice.test.page.SelectWomensClothesPage;
-import com.automationpractice.test.page.WomanPage;
-import com.automationpractice.test.page.WomensClothesMessageContinueOrPayPage;
-import com.automationpractice.test.page.WomensClothesMoreInfoPage;
+import com.automationpractice.test.page.selectandshop.SelectWomensClothesPage;
+import com.automationpractice.test.page.selectandshop.WomanPage;
+import com.automationpractice.test.page.selectandshop.WomensClothesMessageContinueOrPayPage;
+import com.automationpractice.test.page.selectandshop.WomensClothesMoreInfoPage;
 
 import static com.automationpractice.test.helpers.Dictionary.*;
 import static com.automationpractice.test.helpers.Helper.generateCustomer;

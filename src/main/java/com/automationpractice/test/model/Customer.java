@@ -16,6 +16,54 @@ public class Customer {
 
     private String size;
 
+
+    private String heading;
+    private String orderReference;
+    private String product;
+    private String message;
+
+    private String orderReferenceID;
+
+    public String getOrderReferenceID(String proced) {
+        return orderReferenceID;
+    }
+
+    public void setOrderReferenceID(String orderReferenceID) {
+        this.orderReferenceID = orderReferenceID;
+    }
+
+    public String getOrderReference() {
+        return orderReference;
+    }
+
+    public void setOrderReference(String orderReference) {
+        this.orderReference = orderReference;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public String getHeading() {
+        return heading;
+    }
+
+    public void setHeading(String heading) {
+        this.heading = heading;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public String getSize() {
         return size;
     }
