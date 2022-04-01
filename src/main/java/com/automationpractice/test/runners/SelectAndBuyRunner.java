@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         glue = {"com.automationpractice.test.stepdefinition"},
         publish = true
 )
-public class SeleccionYComprarRunner {
+public class SelectAndBuyRunner {
 }

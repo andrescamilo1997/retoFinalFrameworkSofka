@@ -20,7 +20,7 @@ import io.cucumber.java.es.Entonces;
 import static com.automationpractice.test.helpers.Dictionary.MSG_ALL_OK_INSELECTION;
 import static com.automationpractice.test.helpers.Dictionary.MSG_ALL_OK_INSSHOP;
 
-public class SeleccionYCompraStepDefinition extends Setup{
+public class SelectAndBuyStepDefinition extends Setup{
     private WebAction webAction;
 
     @Before
