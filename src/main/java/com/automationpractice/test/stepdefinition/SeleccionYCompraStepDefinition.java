@@ -3,15 +3,12 @@ package com.automationpractice.test.stepdefinition;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.evidence.reports.Assert;
-import com.automationpractice.test.controllers.createaccountandopen.CreateAnAccountWebController;
-import com.automationpractice.test.controllers.createaccountandopen.LoginPageController;
+
 import com.automationpractice.test.controllers.selectandshop.AlertShopController;
 import com.automationpractice.test.controllers.selectandshop.SeleccionarAlertController;
 import com.automationpractice.test.controllers.selectandshop.SeleccionarController;
-import com.automationpractice.test.controllers.openwebpage.StartBrowserWebController;
 import com.automationpractice.test.controllers.selectandshop.ShopProductsController;
 import com.automationpractice.test.data.objects.TestInfo;
-import com.automationpractice.test.model.Customer;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -25,7 +22,6 @@ import static com.automationpractice.test.helpers.Dictionary.MSG_ALL_OK_INSSHOP;
 
 public class SeleccionYCompraStepDefinition extends Setup{
     private WebAction webAction;
-    private Customer customer;
 
     @Before
     public void setup(Scenario scenario){
@@ -34,25 +30,12 @@ public class SeleccionYCompraStepDefinition extends Setup{
         webAction.setScenario(testInfo.getScenarioName());
     }
 
-    //SELECCIONAR PRODUCTO
+    //First Scenario
     @Dado("el cliente despues despues de haberse registrado")
     public void elClienteDespuesDespuesDeHaberseRegistrado() {
         try{
-
-            StartBrowserWebController startBrowserWebController = new StartBrowserWebController();
-            startBrowserWebController.setWebAction(webAction);
-            startBrowserWebController.setBrowser(browser());
-            startBrowserWebController.setFeatue(testInfo.getFeatureName());
-            startBrowserWebController.abrirTiendaOnline();
-
-            LoginPageController loginPageController = new LoginPageController();
-            loginPageController.setWebAction(webAction);
-            loginPageController.irHaciaLoginPage();
-
-            CreateAnAccountWebController createAnAccountWebController = new CreateAnAccountWebController();
-            createAnAccountWebController.setWebAction(webAction);
-            createAnAccountWebController.crearUnaCuenta();
-
+            openPageToTest(webAction, browser(), testInfo.getFeatureName());
+            doRegisterAndLogin(webAction);
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -60,17 +43,13 @@ public class SeleccionYCompraStepDefinition extends Setup{
     @Cuando("el cliente compra selecciona un vestido de la seccion Women escoje un vestido, cantidad, colo y agrega al carrito.")
     public void elClienteCompraSeleccionaUnVestidoDeLaSeccionWomenEscojeUnVestidoCantidadColoYAgregaAlCarrito() {
         try{
-
             SeleccionarController seleccionarController = new SeleccionarController();
             seleccionarController.setWebAction(webAction);
-            seleccionarController.seleccionarUnProducto();
-            seleccionarController.irABuscarOtroProducto();
-            seleccionarController.seleccionarOtroProducto();
-            seleccionarController.noSeleccionarEIrAComprar();
 
-
-
-
+            seleccionarController.selectOneProduct();
+            seleccionarController.continueShopping();
+            seleccionarController.selectOtherProduct();
+            seleccionarController.noSelectMoreAndGoToSummary();
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -81,39 +60,25 @@ public class SeleccionYCompraStepDefinition extends Setup{
 
             SeleccionarAlertController seleccionarAlertController = new SeleccionarAlertController();
             seleccionarAlertController.setWebAction(webAction);
-            String message = seleccionarAlertController.obternerMensajeDeConfirmacion();
+            String message = seleccionarAlertController.confirmationMessage();
 
             Assert
                     .Hard
                     .thatString(message)
                     .isEqualTo(MSG_ALL_OK_INSELECTION);
 
-
-
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
     }
 
-    //COMPRAR PRODUCTO
+    //Second Scenario
 
     @Dado("el cliente hizo la seleccion de su vestido")
     public void elClienteHizoLaSeleccionDeSuVestido() {
         try{
-            StartBrowserWebController startBrowserWebController = new StartBrowserWebController();
-            startBrowserWebController.setWebAction(webAction);
-            startBrowserWebController.setBrowser(browser());
-            startBrowserWebController.setFeatue(testInfo.getFeatureName());
-            startBrowserWebController.abrirTiendaOnline();
-
-            LoginPageController loginPageController = new LoginPageController();
-            loginPageController.setWebAction(webAction);
-            loginPageController.irHaciaLoginPage();
-
-            CreateAnAccountWebController createAnAccountWebController = new CreateAnAccountWebController();
-            createAnAccountWebController.setWebAction(webAction);
-            createAnAccountWebController.crearUnaCuenta();
-
+            openPageToTest(webAction, browser(), testInfo.getFeatureName());
+            doRegisterAndLogin(webAction);
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -121,14 +86,11 @@ public class SeleccionYCompraStepDefinition extends Setup{
     @Cuando("se ubica en comprar el articulo, verifica su descripcion de compra, verfica su direccion, acepta terminos y condiciones")
     public void seUbicaEnComprarElArticuloVerificaSuDescripcionDeCompraVerficaSuDireccionAceptaTerminosYCondiciones() {
         try{
-
             SeleccionarController seleccionarController = new SeleccionarController();
             seleccionarController.setWebAction(webAction);
 
-            seleccionarController.seleccionarUnProducto();
-            seleccionarController.noSeleccionarEIrAComprar();
-
-
+            seleccionarController.selectOneProduct();
+            seleccionarController.noSelectMoreAndGoToSummary();
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -143,7 +105,7 @@ public class SeleccionYCompraStepDefinition extends Setup{
             shopProductsController.confirmarPedido();
             shopProductsController.terminosyCondiciones();
             shopProductsController.checkoutProcess();
-            shopProductsController.pago();
+            shopProductsController.procedToPay();
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -154,7 +116,7 @@ public class SeleccionYCompraStepDefinition extends Setup{
         try{
             AlertShopController alertShopController = new AlertShopController();
             alertShopController.setWebAction(webAction);
-            String mensage = alertShopController.obternerMensajeDeConfirmacion();
+            String mensage = alertShopController.confirmationMessage();
 
             Assert
                     .Hard

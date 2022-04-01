@@ -13,17 +13,17 @@ public class AlertShopController {
         this.webAction = webAction;
     }
 
-    public String obternerMensajeDeConfirmacion(){
-        String mensaje = "";
+    public String confirmationMessage(){
+        String msg = "";
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
 
-            mensaje = webAction.getText(compraPage.getMsgAllOkInPay(), 10, true);
+            msg = webAction.getText(compraPage.getMsgAllOkInPay(), 10, true);
 
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
         }
 
-        return mensaje;
+        return msg;
     }
 }

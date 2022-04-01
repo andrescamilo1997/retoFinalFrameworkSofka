@@ -12,28 +12,22 @@ public class ContactUsController {
     private WebAction webAction;
     private Customer customer;
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public void setWebAction(WebAction webAction) {
         this.webAction = webAction;
     }
 
-    public void irAlMenuContactUs(){
+    public void goToPageContactUs(){
         try{
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
-
+            
             webAction.moveTo(contactUsMenuPage.getContactUsMenu(), 10, false);
             webAction.click(contactUsMenuPage.getContactUsMenu(), 10, true);
-
-
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
     }
 
-    public void contactUsIfNotHaveAccount(){
+    public void contactUsSendAllTheRequiredFiles(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
@@ -52,7 +46,7 @@ public class ContactUsController {
         }
     }
 
-    public void siNoIngresaEmail(){
+    public void contactUsButDoesNotSendEmail(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
@@ -70,12 +64,10 @@ public class ContactUsController {
 
     public void pressBtnSendContactUs(){
         try{
-            customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
 
             webAction.moveTo(contactUsMenuPage.getClickFinish(),10,false);
             webAction.click(contactUsMenuPage.getClickFinish(), 10,true);
-
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }

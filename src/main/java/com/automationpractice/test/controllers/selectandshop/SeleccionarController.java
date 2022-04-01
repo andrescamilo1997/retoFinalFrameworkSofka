@@ -15,22 +15,17 @@ public class SeleccionarController {
     private WebAction webAction;
     private Customer customer;
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public void setWebAction(WebAction webAction) {
         this.webAction = webAction;
     }
 
-    public void seleccionarUnProducto(){
+    public void selectOneProduct(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
 
             WomanPage womanPage = new WomanPage(webAction.getDriver());
             SelectWomensClothesPage selectWomensClothesPage = new SelectWomensClothesPage(webAction.getDriver());
             WomensClothesMoreInfoPage womensClothesMoreInfoPage = new WomensClothesMoreInfoPage(webAction.getDriver());
-
 
             webAction.moveTo(womanPage.getWomen(), 10, false);
             webAction.click(womanPage.getWomen(), 10, true);
@@ -52,9 +47,11 @@ public class SeleccionarController {
         }
 
     }
-    public void irABuscarOtroProducto(){
+
+    public void continueShopping(){
         try{
-            WomensClothesMessageContinueOrPayPage womensClothesMessage = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
+            WomensClothesMessageContinueOrPayPage womensClothesMessage
+                    = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
 
             webAction.click(womensClothesMessage.getContinueShopping(), 10, true);
 
@@ -64,7 +61,7 @@ public class SeleccionarController {
 
     }
 
-    public void seleccionarOtroProducto(){
+    public void selectOtherProduct(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
 
@@ -91,9 +88,11 @@ public class SeleccionarController {
         }
     }
 
-    public void noSeleccionarEIrAComprar(){
+    public void noSelectMoreAndGoToSummary(){
         try{
-            WomensClothesMessageContinueOrPayPage womensClothesMessage = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
+            WomensClothesMessageContinueOrPayPage womensClothesMessage
+                    = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
+
             webAction.click(womensClothesMessage.getProceedToCheckout(), 10, true);
 
         }catch (Exception exception){

@@ -13,16 +13,16 @@ public class ContactUsAlertNotController {
         this.webAction = webAction;
     }
 
-    public String obternerMensajeDeConfirmacion(){
-        String mensaje = "";
+    public String confirmationMessage(){
+        String msg = "";
         try{
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
 
-            mensaje = webAction.getText(contactUsMenuPage.getMsgAllNotOk(), 10, true);
+            msg = webAction.getText(contactUsMenuPage.getMsgAllNotOk(), 10, true);
 
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
         }
-        return mensaje;
+        return msg;
     }
 }

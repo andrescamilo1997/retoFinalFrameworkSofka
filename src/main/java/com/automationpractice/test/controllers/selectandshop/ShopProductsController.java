@@ -5,9 +5,6 @@ import co.com.sofka.test.evidence.reports.Report;
 import com.automationpractice.test.model.Customer;
 import com.automationpractice.test.page.selectandshop.CompraPage;
 
-import static com.automationpractice.test.helpers.Dictionary.*;
-import static com.automationpractice.test.helpers.Helper.generateCustomer;
-
 public class ShopProductsController {
     private WebAction webAction;
     private Customer customer;
@@ -58,7 +55,7 @@ public class ShopProductsController {
     }
 
 
-    public void pago(){
+    public void procedToPay(){
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
 

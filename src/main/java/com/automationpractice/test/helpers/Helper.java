@@ -1,6 +1,5 @@
 package com.automationpractice.test.helpers;
 
-
 import com.automationpractice.test.model.Customer;
 import co.com.sofka.test.evidence.reports.Report;
 import com.github.javafaker.Faker;
@@ -47,17 +46,17 @@ public class Helper {
                         .replace(SPACE_STRING, EMPTY_STRING)
         );
 
-        customer.setFirstName(faker.name().firstName());
-        customer.setLastName(faker.name().lastName());
-        customer.setPassword(faker.number().digits(8));
-        customer.setDayBirth(String.valueOf(faker.number().numberBetween(1, 28)));
-        customer.setMonthBirth(String.valueOf(faker.number().numberBetween(1, 12)));
-        customer.setYearBirth(String.valueOf(faker.number().numberBetween(1980, 2003)));
+        customer.setFirstName   (faker.name     ().firstName());
+        customer.setLastName    (faker.name     ().lastName());
+        customer.setPassword    (faker.number   ().digits(8));
+        customer.setDayBirth    (String.valueOf (faker.number().numberBetween(1, 28)));
+        customer.setMonthBirth  (String.valueOf (faker.number().numberBetween(1, 12)));
+        customer.setYearBirth   (String.valueOf (faker.number().numberBetween(1980, 2003)));
 
-        customer.setAddress(faker.address().fullAddress());
-        customer.setCity(faker.address().city());
-        customer.setPostalCode(faker.address().zipCode());
-        customer.setMobilePhone(
+        customer.setAddress     (faker.address  ().fullAddress  ());
+        customer.setCity        (faker.address  ().city         ());
+        customer.setPostalCode  (faker.address  ().zipCode      ());
+        customer.setMobilePhone (
                 String.valueOf(
                         faker
                                 .number()
@@ -71,14 +70,15 @@ public class Helper {
         );
 
 
-        customer.setHeading(String.valueOf(faker.number().numberBetween(1, 2)));
-        customer.setOrderReference("416611");
-        customer.setProduct("2");
-        customer.setMessage(MSG_TO_SEND);
-        customer.setState(STATE_BY_DEFAULT_FLORIDA);
-        customer.setSize(SIZE_S);
-        customer.setSize(SIZE_L);
+        customer.setHeading     (String.valueOf(faker.number().numberBetween(1, 2)));
+        //customer.setOrderReference("416611");
+        //customer.setProduct("2");
+        customer.setMessage     (MSG_TO_SEND);
+        customer.setState       (STATE_BY_DEFAULT_FLORIDA);
+        customer.setSize        (SIZE_S);
+        customer.setSize        (SIZE_L);
 
         return customer;
     }
+
 }
