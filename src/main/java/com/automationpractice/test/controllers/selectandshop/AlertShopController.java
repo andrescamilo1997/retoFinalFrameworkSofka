@@ -6,6 +6,8 @@ import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
 import com.automationpractice.test.page.selectandshop.CompraPage;
 
+import static com.automationpractice.test.helpers.Dictionary.*;
+
 public class AlertShopController {
     private WebAction webAction;
 
@@ -18,10 +20,14 @@ public class AlertShopController {
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
 
-            msg = webAction.getText(compraPage.getMsgAllOkInPay(), 10, true);
+            msg = webAction.getText(
+                    compraPage.getMsgAllOkInPay(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         } catch (WebActionsException e) {
-            Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
 
         return msg;

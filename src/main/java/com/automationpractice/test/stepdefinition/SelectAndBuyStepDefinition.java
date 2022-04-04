@@ -17,8 +17,7 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
-import static com.automationpractice.test.helpers.Dictionary.MSG_ALL_OK_INSELECTION;
-import static com.automationpractice.test.helpers.Dictionary.MSG_ALL_OK_INSSHOP;
+import static com.automationpractice.test.helpers.Dictionary.*;
 
 public class SelectAndBuyStepDefinition extends Setup{
     private WebAction webAction;
@@ -136,9 +135,9 @@ public class SelectAndBuyStepDefinition extends Setup{
         if (webAction != null && webAction.getDriver() != null)
             webAction.closeBrowser();
 
-        Report.reportInfo("***** HA FINALIZADO LA PRUEBA******"
+        Report.reportInfo(REPORT_INFO
                 .concat(testInfo.getFeatureName())
-                .concat("-")
+                .concat(TO_CONCAT)
                 .concat(testInfo.getScenarioName()));
     }
 

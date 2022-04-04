@@ -24,7 +24,7 @@ public class Helper {
         try (FileReader fileReader = new FileReader(CONFIGURATION_PROPERTIES_FILE)) {
             properties.load(fileReader);
         } catch (IOException e) {
-            Report.reportFailure("Fallo al consultar una propiedad del archivo "
+            Report.reportFailure(ERROR_TO_CONSULT_PROPERTY
                     + CONFIGURATION_PROPERTIES_FILE, e);
         }
 
@@ -48,10 +48,10 @@ public class Helper {
 
         customer.setFirstName   (faker.name     ().firstName());
         customer.setLastName    (faker.name     ().lastName());
-        customer.setPassword    (faker.number   ().digits(8));
-        customer.setDayBirth    (String.valueOf (faker.number().numberBetween(1, 28)));
-        customer.setMonthBirth  (String.valueOf (faker.number().numberBetween(1, 12)));
-        customer.setYearBirth   (String.valueOf (faker.number().numberBetween(1980, 2003)));
+        customer.setPassword    (faker.number   ().digits(DIGITS_PASSWORD));
+        customer.setDayBirth    (String.valueOf (faker.number().numberBetween(MIN_DAY, MAX_DAY)));
+        customer.setMonthBirth  (String.valueOf (faker.number().numberBetween(MIN_MONTH, MAX_MONTH)));
+        customer.setYearBirth   (String.valueOf (faker.number().numberBetween(MIN_YEAR, MAX_YEAR)));
 
         customer.setAddress     (faker.address  ().fullAddress  ());
         customer.setCity        (faker.address  ().city         ());
@@ -60,19 +60,26 @@ public class Helper {
                 String.valueOf(
                         faker
                                 .number()
-                                .numberBetween(300000000, 399999999))
+                                .numberBetween(MIN_PHONE_NUMBER, MAX_PHONE_NUMBER))
                         .concat(
                                 String.valueOf(
                                         faker.number()
-                                                .numberBetween(1, 9)
+                                                .numberBetween(MIN_NUMBER, MAX_NUMBER)
                                 )
                         )
         );
 
 
-        customer.setHeading     (String.valueOf(faker.number().numberBetween(1, 2)));
-        //customer.setOrderReference("416611");
-        //customer.setProduct("2");
+        customer.setHeading     (
+                String.valueOf(
+                        faker
+                                .number()
+                                .numberBetween(
+                                        SELECT_HEADING_OPTION1,
+                                        SELECT_HEADING_OPTION2)
+                )
+        );
+
         customer.setMessage     (MSG_TO_SEND);
         customer.setState       (STATE_BY_DEFAULT_FLORIDA);
         customer.setSize        (SIZE_S);

@@ -8,6 +8,8 @@ import com.automationpractice.test.data.objects.TestInfo;
 import co.com.sofka.test.automationtools.selenium.Browser;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static com.automationpractice.test.helpers.Dictionary.MAXIMIZE;
+
 public class Setup {
     protected TestInfo testInfo;
 
@@ -23,7 +25,7 @@ public class Setup {
 
     private ChromeOptions chomeOptions(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
+        options.addArguments(MAXIMIZE);
         return options;
     }
 

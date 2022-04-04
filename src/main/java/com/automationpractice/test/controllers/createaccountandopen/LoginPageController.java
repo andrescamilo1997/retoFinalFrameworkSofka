@@ -5,6 +5,8 @@ import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
 
+import static com.automationpractice.test.helpers.Dictionary.*;
+
 public class LoginPageController {
     private WebAction webAction;
 
@@ -16,10 +18,14 @@ public class LoginPageController {
         try{
             LandingPage landingPage = new LandingPage(webAction.getDriver());
 
-            webAction.click(landingPage.getSignIn(), 2,true);
+            webAction.click(
+                    landingPage.getSignIn(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         } catch (WebActionsException e) {
-            Report.reportFailure("Ocurrio un error al intentar abrir la tienda online", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
     }
 }

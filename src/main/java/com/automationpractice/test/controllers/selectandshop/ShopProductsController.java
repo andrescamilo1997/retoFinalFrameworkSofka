@@ -5,6 +5,8 @@ import co.com.sofka.test.evidence.reports.Report;
 import com.automationpractice.test.model.Customer;
 import com.automationpractice.test.page.selectandshop.CompraPage;
 
+import static com.automationpractice.test.helpers.Dictionary.*;
+
 public class ShopProductsController {
     private WebAction webAction;
     private Customer customer;
@@ -21,11 +23,27 @@ public class ShopProductsController {
         try{
 
             CompraPage compraPage = new CompraPage(webAction.getDriver());
-            webAction.moveTo(compraPage.getFirstProceedToChekout(),10,false);
-            webAction.click(compraPage.getFirstProceedToChekout(),10,true);
+            webAction.moveTo(
+                    compraPage.getFirstProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getFirstProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(compraPage.getSecondProceedToChekout(),10,false);
-            webAction.click(compraPage.getSecondProceedToChekout(),10,true);
+            webAction.moveTo(
+                    compraPage.getSecondProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getSecondProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -36,8 +54,16 @@ public class ShopProductsController {
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
 
-            webAction.moveTo(compraPage.getCheckTermsOfService(),10,false);
-            webAction.click(compraPage.getCheckTermsOfService(),10,true);
+            webAction.moveTo(
+                    compraPage.getCheckTermsOfService(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getCheckTermsOfService(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -47,8 +73,17 @@ public class ShopProductsController {
     public void checkoutProcess(){
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
-            webAction.moveTo(compraPage.getThirdProceedToChekout(),10,false);
-            webAction.click(compraPage.getThirdProceedToChekout(),10,true);
+
+            webAction.moveTo(
+                    compraPage.getThirdProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getThirdProceedToChekout(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -59,11 +94,27 @@ public class ShopProductsController {
         try{
             CompraPage compraPage = new CompraPage(webAction.getDriver());
 
-            webAction.moveTo(compraPage.getPayByBankWire(),10,false);
-            webAction.click(compraPage.getPayByBankWire(),10,true);
+            webAction.moveTo(
+                    compraPage.getPayByBankWire(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getPayByBankWire(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(compraPage.getBtnIConfirmMyOrder(), 10, true);
-            webAction.click(compraPage.getBtnIConfirmMyOrder(), 10, true);
+            webAction.moveTo(
+                    compraPage.getBtnIConfirmMyOrder(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    compraPage.getBtnIConfirmMyOrder(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());

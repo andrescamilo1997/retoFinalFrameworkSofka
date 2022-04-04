@@ -16,8 +16,7 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
-import static com.automationpractice.test.helpers.Dictionary.MSG_AFTER_SEND_FORM_NO_EMAIL;
-import static com.automationpractice.test.helpers.Dictionary.MSG_AFTER_SEND_ALL_THE_FIELDS;
+import static com.automationpractice.test.helpers.Dictionary.*;
 
 public class ContactUsStepsDefinition extends Setup{
     private WebAction webAction;
@@ -113,9 +112,9 @@ public void cerrarDriver() throws InterruptedException {
     if (webAction != null && webAction.getDriver() != null)
         webAction.closeBrowser();
 
-    Report.reportInfo("***** HA FINALIZADO LA PRUEBA******"
+    Report.reportInfo(REPORT_INFO
             .concat(testInfo.getFeatureName())
-            .concat("-")
+            .concat(TO_CONCAT)
             .concat(testInfo.getScenarioName()));
 }
 }

@@ -6,6 +6,7 @@ import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
 
 import static com.automationpractice.test.helpers.Dictionary.APP_URL_PROPERTY;
+import static com.automationpractice.test.helpers.Dictionary.ERROR_VALIDATING;
 import static com.automationpractice.test.helpers.Helper.getProperty;
 
 public class StartBrowserWebController {
@@ -27,9 +28,12 @@ public class StartBrowserWebController {
 
     public void abrirTiendaOnline(){
         try{
-            webAction.startWebApp(browser, getProperty(APP_URL_PROPERTY), feature);
+            webAction.startWebApp(
+                    browser,
+                    getProperty(APP_URL_PROPERTY),
+                    feature);
         } catch (WebActionsException e){
-            Report.reportFailure("Ocurrio un error al intentar abrir la tienda online", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
     }
 }

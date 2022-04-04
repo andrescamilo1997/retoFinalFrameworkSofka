@@ -27,29 +27,70 @@ public class CreateAnAccountWebController {
 
             CreateAnAccountPage createAnAccountPage = new CreateAnAccountPage(webAction.getDriver());
 
-            webAction.sendText(
+            webAction.sendText           (
                     createAnAccountPage.getEmailAddress(),
                     customer.getEmail(),
-                    2,
-                    true
-            );
-            webAction.click(createAnAccountPage.getCreateAnAccount(), 2, true);
-            webAction.click(createAnAccountPage.getMr(), 10, true);
-            webAction.sendText(createAnAccountPage.getFirstName(), customer.getFirstName(), true);
-            webAction.sendText(createAnAccountPage.getLastName(), customer.getLastName(), true);
-            webAction.sendText(createAnAccountPage.getPassword(), customer.getPassword(), true);
-            webAction.selectByPartialText(createAnAccountPage.getDay(), customer.getDayBirth(), true);
-            webAction.selectByValue(createAnAccountPage.getMonth(), customer.getMonthBirth(), true);
-            webAction.selectByPartialText(createAnAccountPage.getYear(), customer.getYearBirth(), true);
-            webAction.sendText(createAnAccountPage.getAddress1(), customer.getAddress(), true);
-            webAction.sendText(createAnAccountPage.getCity(), customer.getCity(), true);
-            webAction.selectByText(createAnAccountPage.getState(), customer.getState(), true);
-            webAction.sendText(createAnAccountPage.getPostCode(), customer.getPostalCode(), true);
-            webAction.sendText(createAnAccountPage.getPhoneMobile(), customer.getMobilePhone(), true);
-            webAction.click(createAnAccountPage.getRegister(), true);
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
+            webAction.click              (
+                    createAnAccountPage.getCreateAnAccount(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
+            webAction.click              (
+                    createAnAccountPage.getMr(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getFirstName(),
+                    customer.getFirstName(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getLastName(),
+                    customer.getLastName(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getPassword(),
+                    customer.getPassword(),
+                    SCREENSHOT);
+            webAction.selectByPartialText(
+                    createAnAccountPage.getDay(),
+                    customer.getDayBirth(),
+                    SCREENSHOT);
+            webAction.selectByValue      (
+                    createAnAccountPage.getMonth(),
+                    customer.getMonthBirth(),
+                    SCREENSHOT);
+            webAction.selectByPartialText(
+                    createAnAccountPage.getYear(),
+                    customer.getYearBirth(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getAddress1(),
+                    customer.getAddress(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getCity(),
+                    customer.getCity(),
+                    SCREENSHOT);
+            webAction.selectByText       (
+                    createAnAccountPage.getState(),
+                    customer.getState(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getPostCode(),
+                    customer.getPostalCode(),
+                    SCREENSHOT);
+            webAction.sendText           (
+                    createAnAccountPage.getPhoneMobile(),
+                    customer.getMobilePhone(),
+                    SCREENSHOT);
+            webAction.click              (
+                    createAnAccountPage.getRegister(),
+                    SCREENSHOT);
+
 
         } catch (WebActionsException e) {
-            Report.reportFailure("Ocurrio un error al intentar crear una cuenta.", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
     }
 }

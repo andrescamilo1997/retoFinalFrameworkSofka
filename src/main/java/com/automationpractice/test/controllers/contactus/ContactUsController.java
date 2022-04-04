@@ -16,12 +16,20 @@ public class ContactUsController {
         this.webAction = webAction;
     }
 
+
     public void goToPageContactUs(){
         try{
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
-            
-            webAction.moveTo(contactUsMenuPage.getContactUsMenu(), 10, false);
-            webAction.click(contactUsMenuPage.getContactUsMenu(), 10, true);
+            webAction.moveTo(
+                    contactUsMenuPage.getContactUsMenu(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    contactUsMenuPage.getContactUsMenu(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -32,14 +40,38 @@ public class ContactUsController {
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
 
-            webAction.moveTo(contactUsMenuPage.getHeading(), 10, false);
-            webAction.selectByValue(contactUsMenuPage.getHeading(), customer.getHeading(), true);
+            webAction.moveTo        (
+                    contactUsMenuPage.getHeading(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.selectByValue (
+                    contactUsMenuPage.getHeading(),
+                    customer.getHeading(),
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(contactUsMenuPage.getEmail(), 10, false);
-            webAction.sendText(contactUsMenuPage.getEmail(), customer.getEmail(), true);
+            webAction.moveTo    (
+                    contactUsMenuPage.getEmail(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.sendText  (
+                    contactUsMenuPage.getEmail(),
+                    customer.getEmail(),
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(contactUsMenuPage.getMessage(), 10, false);
-            webAction.sendText(contactUsMenuPage.getMessage(), customer.getMessage(), true);
+            webAction.moveTo    (
+                    contactUsMenuPage.getMessage(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.sendText  (
+                    contactUsMenuPage.getMessage(),
+                    customer.getMessage(),
+                    SCREENSHOT
+            );
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -51,11 +83,25 @@ public class ContactUsController {
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
 
-            webAction.moveTo(contactUsMenuPage.getHeading(), 10, false);
-            webAction.selectByValue(contactUsMenuPage.getHeading(), customer.getHeading(), true);
+            webAction.moveTo        (
+                    contactUsMenuPage.getHeading(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.selectByValue (
+                    contactUsMenuPage.getHeading(),
+                    customer.getHeading(),
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(contactUsMenuPage.getMessage(), 10, false);
-            webAction.sendText(contactUsMenuPage.getMessage(), customer.getMessage(), true);
+            webAction.moveTo    (
+                    contactUsMenuPage.getMessage(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT);
+            webAction.sendText  (
+                    contactUsMenuPage.getMessage(),
+                    customer.getMessage(),
+                    SCREENSHOT);
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -65,9 +111,15 @@ public class ContactUsController {
     public void pressBtnSendContactUs(){
         try{
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
+            webAction.moveTo(
+                    contactUsMenuPage.getClickFinish(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT);
+            webAction.click (
+                    contactUsMenuPage.getClickFinish(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
 
-            webAction.moveTo(contactUsMenuPage.getClickFinish(),10,false);
-            webAction.click(contactUsMenuPage.getClickFinish(), 10,true);
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }

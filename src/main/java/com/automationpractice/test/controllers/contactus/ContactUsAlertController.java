@@ -6,6 +6,8 @@ import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
 import com.automationpractice.test.page.contactus.ContactUsMenuPage;
 
+import static com.automationpractice.test.helpers.Dictionary.*;
+
 public class ContactUsAlertController {
     private WebAction webAction;
 
@@ -18,10 +20,14 @@ public class ContactUsAlertController {
         try{
             ContactUsMenuPage contactUsMenuPage = new ContactUsMenuPage(webAction.getDriver());
 
-            msg = webAction.getText(contactUsMenuPage.getMsgAllOk(), 10, true);
+            msg = webAction.getText(
+                    contactUsMenuPage.getMsgAllOk(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         } catch (WebActionsException e) {
-            Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
         return msg;
     }

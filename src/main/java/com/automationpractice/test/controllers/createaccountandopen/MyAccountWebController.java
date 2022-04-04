@@ -5,6 +5,8 @@ import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
 import co.com.sofka.test.exceptions.WebActionsException;
 
+import static com.automationpractice.test.helpers.Dictionary.*;
+
 public class MyAccountWebController {
     private WebAction webAction;
 
@@ -17,10 +19,14 @@ public class MyAccountWebController {
         try{
             MyAccountPage myAccountPage = new MyAccountPage(webAction.getDriver());
 
-            usuario = webAction.getText(myAccountPage.getCustomerName(), 2, true);
+            usuario = webAction.getText(
+                    myAccountPage.getCustomerName(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         } catch (WebActionsException e) {
-            Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
+            Report.reportFailure(ERROR_VALIDATING, e);
         }
 
         return usuario;

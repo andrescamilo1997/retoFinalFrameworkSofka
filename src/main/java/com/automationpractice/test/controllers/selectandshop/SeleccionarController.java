@@ -22,25 +22,58 @@ public class SeleccionarController {
     public void selectOneProduct(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
-
             WomanPage womanPage = new WomanPage(webAction.getDriver());
             SelectWomensClothesPage selectWomensClothesPage = new SelectWomensClothesPage(webAction.getDriver());
             WomensClothesMoreInfoPage womensClothesMoreInfoPage = new WomensClothesMoreInfoPage(webAction.getDriver());
 
-            webAction.moveTo(womanPage.getWomen(), 10, false);
-            webAction.click(womanPage.getWomen(), 10, true);
-            webAction.moveTo(selectWomensClothesPage.getWomenClothesFirst(), 10, false);
-            webAction.click(selectWomensClothesPage.getWomenClothesFirst(), 10, true);
+            webAction.moveTo(
+                    womanPage.getWomen(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    womanPage.getWomen(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(womensClothesMoreInfoPage.getQuantityMore(), 10, false);
+            webAction.moveTo(
+                    selectWomensClothesPage.getWomenClothesFirst(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT);
+            webAction.click (
+                    selectWomensClothesPage.getWomenClothesFirst(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
+
+            webAction.moveTo(
+                    womensClothesMoreInfoPage.getQuantityMore(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
             for (int i = 0; i < 3; i++) {
-                webAction.click(womensClothesMoreInfoPage.getQuantityMore(), 10, true);
+                webAction.click(
+                        womensClothesMoreInfoPage.getQuantityMore(),
+                        SECONDS_TO_TIME_OUT,
+                        SCREENSHOT);
             }
-            webAction.moveTo(womensClothesMoreInfoPage.getSize(), 10, false);
-            webAction.selectByValue(womensClothesMoreInfoPage.getSize(), customer.getSize(), true);
 
-            webAction.moveTo(womensClothesMoreInfoPage.getAddToCart(), 10, false);
-            webAction.click(womensClothesMoreInfoPage.getAddToCart(), 10, true);
+            webAction.moveTo        (
+                    womensClothesMoreInfoPage.getSize(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT);
+            webAction.selectByValue (
+                    womensClothesMoreInfoPage.getSize(),
+                    customer.getSize(),
+                    SCREENSHOT);
+
+            webAction.moveTo(
+                    womensClothesMoreInfoPage.getAddToCart(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
+            webAction.click (
+                    womensClothesMoreInfoPage.getAddToCart(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -53,7 +86,10 @@ public class SeleccionarController {
             WomensClothesMessageContinueOrPayPage womensClothesMessage
                     = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
 
-            webAction.click(womensClothesMessage.getContinueShopping(), 10, true);
+            webAction.click(
+                    womensClothesMessage.getContinueShopping(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
@@ -64,25 +100,59 @@ public class SeleccionarController {
     public void selectOtherProduct(){
         try{
             customer = generateCustomer(SPANISH_CODE_LANGUAGE, COUNTRY_CODE, EMAIL_DOMAIN);
-
             WomanPage womanPage = new WomanPage(webAction.getDriver());
             SelectWomensClothesPage selectWomensClothesPage = new SelectWomensClothesPage(webAction.getDriver());
             WomensClothesMoreInfoPage womensClothesMoreInfoPage = new WomensClothesMoreInfoPage(webAction.getDriver());
 
-            webAction.click(womanPage.getWomen(), 10, true);
+            webAction.click(
+                    womanPage.getWomen(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT);
 
-            webAction.moveTo(selectWomensClothesPage.getWomenClothesSecond(), 10, false);
-            webAction.click(selectWomensClothesPage.getWomenClothesSecond(), 10, true);
+            webAction.moveTo(
+                    selectWomensClothesPage.getWomenClothesSecond(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    selectWomensClothesPage.getWomenClothesSecond(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(womensClothesMoreInfoPage.getQuantityMore(), 10, false);
+            webAction.moveTo(
+                    womensClothesMoreInfoPage.getQuantityMore(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
             for (int i = 0; i < 3; i++) {
-                webAction.click(womensClothesMoreInfoPage.getQuantityMore(), 10, true);
+                webAction.click(
+                        womensClothesMoreInfoPage.getQuantityMore(),
+                        SECONDS_TO_TIME_OUT,
+                        SCREENSHOT
+                );
             }
-            webAction.moveTo(womensClothesMoreInfoPage.getSize(), 10, false);
-            webAction.selectByValue(womensClothesMoreInfoPage.getSize(), customer.getSize(), true);
+            webAction.moveTo        (
+                    womensClothesMoreInfoPage.getSize(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.selectByValue (
+                    womensClothesMoreInfoPage.getSize(),
+                    customer.getSize(),
+                    SCREENSHOT
+            );
 
-            webAction.moveTo(womensClothesMoreInfoPage.getAddToCart(), 10, false);
-            webAction.click(womensClothesMoreInfoPage.getAddToCart(), 10, true);
+            webAction.moveTo(
+                    womensClothesMoreInfoPage.getAddToCart(),
+                    SECONDS_TO_TIME_OUT,
+                    NOT_SCREENSHOT
+            );
+            webAction.click (
+                    womensClothesMoreInfoPage.getAddToCart(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
@@ -93,11 +163,14 @@ public class SeleccionarController {
             WomensClothesMessageContinueOrPayPage womensClothesMessage
                     = new WomensClothesMessageContinueOrPayPage(webAction.getDriver());
 
-            webAction.click(womensClothesMessage.getProceedToCheckout(), 10, true);
+            webAction.click(
+                    womensClothesMessage.getProceedToCheckout(),
+                    SECONDS_TO_TIME_OUT,
+                    SCREENSHOT
+            );
 
         }catch (Exception exception){
             Report.reportFailure(exception.getMessage());
         }
-
     }
 }
